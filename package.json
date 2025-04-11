@@ -1,0 +1,25 @@
+{
+  "name": "controle-pa-api",
+  "version": "1.0.0",
+  "description": "API para cadastrar dados do app Controle de PA",
+  "keywords": [
+    "node",
+    "nodemon",
+    "express",
+    "mysql2"
+  ],
+  "license": "ISC",
+  "author": "Leonardo Silva",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "api": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.0",
+    "nodemon": "^3.1.9"
+  }
+}
