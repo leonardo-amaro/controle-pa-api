@@ -11,7 +11,15 @@ const getById = async (id) => {
   return rows[0];
 }
 
+const insert = async ({ data, periodo, sistole, diastole }) => {
+  const query = "INSERT INTO dados VALUES( DEFAULT, ?, ?, ?, ? )";
+  const [result] = await db.execute(query, [data, periodo, sistole, diastole]);
+  return result.insertId;
+
+}
+
 export {
   getAll,
-  getById
+  getById,
+  insert
 }

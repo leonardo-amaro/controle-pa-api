@@ -1,4 +1,4 @@
-import { getAll, getById } from "../models/dataModel.js"
+import { getAll, getById, insert } from "../models/dataModel.js"
 
 const getData = async (req, res) => {
   try {
@@ -22,7 +22,14 @@ const getDataById = async (req, res) => {
   }
 }
 
+const createData = async (req, res) => {
+  const { data, periodo, sistole, diastole } = req.body;
+  await insert({ data, periodo, sistole, diastole });
+  res.status(201).send("Registro criado com sucesso!");
+}
+
 export {
   getData,
-  getDataById
+  getDataById,
+  createData
 }
