@@ -5,4 +5,13 @@ const getAll = async () => {
   return rows;
 }
 
-export default getAll;
+const getById = async (id) => {
+  const query = "SELECT * FROM dados WHERE id = ?";
+  const [rows] = await db.execute(query, [id]);
+  return rows[0];
+}
+
+export {
+  getAll,
+  getById
+}
