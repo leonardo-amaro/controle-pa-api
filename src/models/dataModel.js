@@ -1,7 +1,7 @@
 import db from "../config/database.js";
 
 const getAll = async () => {
-  const [rows] = await db.query("SELECT * FROM dados");
+  const [rows] = await db.query("SELECT * FROM dados ORDER BY dados.data");
   return rows;
 }
 
